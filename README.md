@@ -4,7 +4,7 @@
 
 ## 🌐 Live Demo
 
-[View Page Pulse Live](https://page-pulse-l22l.vercel.app/)
+[View Page Pulse Live](YOUR_VERCEL_URL)
 
 ## 📌 Overview
 
@@ -16,20 +16,21 @@ Users simply enter a website URL, and Page Pulse analyzes the website and presen
 
 - 🔍 Website URL analysis
 - 📊 SEO health score
-- ⚡ Response time measurement
+- ⚡ Website response time measurement
 - 🌐 HTTP status monitoring
 - 📝 Page title analysis
 - 🔤 H1 tag detection
 - 🖼️ Image and alt-text analysis
 - 🔗 Link analysis
-- 📄 Content/word count analysis
-- 💡 Actionable recommendations
-- ❌ Invalid URL/error handling
+- 📄 Content and word count analysis
+- 💡 Actionable SEO recommendations
+- ❌ Invalid URL and error handling
 - 📱 Responsive user interface
 
 ## 🛠️ Tech Stack
 
 ### Frontend
+
 - React.js
 - Vite
 - Axios
@@ -37,6 +38,7 @@ Users simply enter a website URL, and Page Pulse analyzes the website and presen
 - Lucide React
 
 ### Backend
+
 - Node.js
 - Express.js
 - Axios
@@ -44,6 +46,7 @@ Users simply enter a website URL, and Page Pulse analyzes the website and presen
 - CORS
 
 ### Deployment
+
 - Vercel — Frontend
 - Render — Backend
 
@@ -51,18 +54,31 @@ Users simply enter a website URL, and Page Pulse analyzes the website and presen
 
 ```text
 page-pulse/
+│
 ├── backend/
 │   ├── controllers/
+│   │   └── analyzeController.js
 │   ├── routes/
+│   │   └── analyzeRoutes.js
 │   ├── utils/
+│   │   └── parser.js
 │   ├── package.json
 │   └── server.js
 │
 ├── frontend/
 │   ├── src/
+│   │   ├── components/
+│   │   ├── Styles/
+│   │   ├── App.jsx
+│   │   └── main.jsx
 │   ├── public/
 │   ├── package.json
 │   └── ...
+│
+├── screenshots/
+│   ├── Homepage.jpeg
+│   ├── Analysis result.jpeg
+│   └── Error handling.jpeg
 │
 ├── .gitignore
 └── README.md
