@@ -1,0 +1,188 @@
+.cards {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 16px;
+
+  width: 100%;
+}
+
+.metric-card {
+  position: relative;
+
+  min-height: 175px;
+
+  padding: 22px;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(23, 39, 34, 0.9),
+      rgba(13, 25, 21, 0.92)
+    );
+
+  border: 1px solid rgba(108, 212, 164, 0.1);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+
+  overflow: hidden;
+}
+
+.metric-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 120px;
+  height: 120px;
+
+  right: -65px;
+  bottom: -70px;
+
+  border-radius: 50%;
+
+  background: rgba(108, 212, 164, 0.07);
+
+  filter: blur(25px);
+
+  pointer-events: none;
+}
+
+.metric-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(108, 212, 164, 0.25);
+
+  box-shadow:
+    0 22px 55px rgba(0, 0, 0, 0.3),
+    0 0 35px rgba(108, 212, 164, 0.035);
+}
+
+.metric-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+}
+
+.metric-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  color: #6cd4a4;
+
+  background: rgba(108, 212, 164, 0.07);
+
+  border: 1px solid rgba(108, 212, 164, 0.1);
+}
+
+.badge {
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.3px;
+}
+
+.badge.primary {
+  color: #9bb7aa;
+
+  background: rgba(155, 183, 170, 0.07);
+
+  border: 1px solid rgba(155, 183, 170, 0.1);
+}
+
+.badge.success {
+  color: #6cd4a4;
+
+  background: rgba(108, 212, 164, 0.08);
+
+  border: 1px solid rgba(108, 212, 164, 0.14);
+}
+
+.badge.warning {
+  color: #e5c47b;
+
+  background: rgba(229, 196, 123, 0.08);
+
+  border: 1px solid rgba(229, 196, 123, 0.13);
+}
+
+.badge.danger {
+  color: #ef9a8d;
+
+  background: rgba(239, 154, 141, 0.08);
+
+  border: 1px solid rgba(239, 154, 141, 0.13);
+}
+
+.metric-card h4 {
+  margin-bottom: 8px;
+
+  color: #819a90;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.8px;
+}
+
+.metric-card h2 {
+  max-width: 100%;
+
+  overflow: hidden;
+
+  color: #eef8f3;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 22px;
+
+  font-weight: 600;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+@media (max-width: 1000px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .metric-card {
+    min-height: 155px;
+  }
+}

@@ -1,0 +1,43 @@
+.empty-state{
+    margin:70px auto;
+    max-width:700px;
+    text-align:center;
+    padding:50px;
+    background:#1e293b;
+    border-radius:24px;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.empty-icon{
+    color:#38bdf8;
+    margin-bottom:20px;
+}
+
+.empty-state h2{
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+.empty-state p{
+    color:#94a3b8;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+.feature-list{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:18px;
+}
+
+.feature{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    background:#0f172a;
+    padding:12px 18px;
+    border-radius:12px;
+    color:#38bdf8;
+    border:1px solid rgba(255,255,255,.05);
+}

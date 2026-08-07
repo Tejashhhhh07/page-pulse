@@ -1,0 +1,48 @@
+.footer {
+  position: relative;
+
+  width: 100%;
+
+  padding: 32px 20px 40px;
+
+  margin-top: 20px;
+
+  text-align: center;
+
+  color: #71877f;
+
+  font-size: 12px;
+
+  border-top: 1px solid rgba(108, 212, 164, 0.08);
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer a {
+  color: #6cd4a4;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  transition:
+    color 0.25s ease,
+    text-shadow 0.25s ease;
+}
+
+.footer a:hover {
+  color: #a5edc6;
+
+  text-shadow:
+    0 0 15px rgba(108, 212, 164, 0.3);
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 28px 15px 32px;
+
+    font-size: 11px;
+  }
+}

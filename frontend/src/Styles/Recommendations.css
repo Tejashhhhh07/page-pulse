@@ -1,0 +1,92 @@
+.recommendation-card {
+  width: 100%;
+
+  margin-top: 24px;
+
+  padding: 28px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(23, 39, 34, 0.9),
+      rgba(13, 25, 21, 0.94)
+    );
+
+  border: 1px solid rgba(108, 212, 164, 0.1);
+
+  box-shadow:
+    0 20px 55px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+.recommendation-card h2 {
+  margin-bottom: 20px;
+
+  color: #eef8f3;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 20px;
+
+  font-weight: 600;
+}
+
+.recommendation {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 14px 15px;
+
+  margin-top: 10px;
+
+  border-radius: 12px;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+.recommendation svg {
+  flex-shrink: 0;
+}
+
+.recommendation.success {
+  color: #9ccbb4;
+
+  background: rgba(108, 212, 164, 0.045);
+
+  border: 1px solid rgba(108, 212, 164, 0.08);
+}
+
+.recommendation.success svg {
+  color: #6cd4a4;
+}
+
+.recommendation.warning {
+  color: #c8b487;
+
+  background: rgba(229, 196, 123, 0.045);
+
+  border: 1px solid rgba(229, 196, 123, 0.08);
+}
+
+.recommendation.warning svg {
+  color: #d9b968;
+}
+
+@media (max-width: 550px) {
+  .recommendation-card {
+    padding: 22px 16px;
+  }
+
+  .recommendation {
+    align-items: flex-start;
+
+    font-size: 12px;
+  }
+}
