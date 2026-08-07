@@ -12,6 +12,8 @@ Page Pulse is a web-based website analysis tool that evaluates a website's SEO h
 
 Users simply enter a website URL, and Page Pulse analyzes the website and presents important metrics through an easy-to-understand dashboard.
 
+The project was built as part of the Digital Heroes SDE Trial.
+
 ## ✨ Features
 
 - 🔍 Website URL analysis
@@ -45,6 +47,10 @@ Users simply enter a website URL, and Page Pulse analyzes the website and presen
 - Cheerio
 - CORS
 
+### Testing
+
+- Jest
+
 ### Deployment
 
 - Vercel — Frontend
@@ -62,6 +68,8 @@ page-pulse/
 │   │   └── analyzeRoutes.js
 │   ├── utils/
 │   │   └── parser.js
+│   ├── tests/
+│   │   └── parser.test.js
 │   ├── package.json
 │   └── server.js
 │

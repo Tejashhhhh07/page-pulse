@@ -1,16 +1,18 @@
 const axios = require("axios");
-const cheerio = require("cheerio");
+const { parseHtml } = require("../utils/parser");
 
 const analyzeWebsite = async (req, res) => {
   try {
     const { url } = req.body;
 
+    // Check if URL is provided
     if (!url) {
       return res.status(400).json({
         error: "URL is required",
       });
     }
 
+    // Validate URL format
     try {
       new URL(url);
     } catch {
@@ -19,8 +21,10 @@ const analyzeWebsite = async (req, res) => {
       });
     }
 
+    // Start measuring response time
     const startTime = Date.now();
 
+    // Fetch website
     const response = await axios.get(url, {
       timeout: 5000,
       headers: {
@@ -31,57 +35,32 @@ const analyzeWebsite = async (req, res) => {
 
     const responseTime = Date.now() - startTime;
 
-    const $ = cheerio.load(response.data);
+    // Parse HTML using parser utility
+    const parsedData = parseHtml(response.data);
 
-    const title = $("title").text().trim() || "No title found";
-
-    const metaDescription =
-      $('meta[name="description"]').attr("content") ||
-      "No description found";
-
-    const h1Count = $("h1").length;
-
-    const totalImages = $("img").length;
-
-    const imagesWithoutAlt = $("img").filter((i, el) => {
-      const alt = $(el).attr("alt");
-      return alt === undefined || alt.trim() === "";
-    }).length;
-
-    const totalLinks = $("a").length;
-
-    const bodyText = $("body").text().trim();
-
-    const wordCount = bodyText
-      ? bodyText.split(/\s+/).length
-      : 0;
-
+    // Return analysis report
     res.status(200).json({
       status: response.status,
       responseTime: `${responseTime} ms`,
-      title,
-      metaDescription,
-      h1Count,
-      totalImages,
-      imagesWithoutAlt,
-      totalLinks,
-      wordCount,
+      ...parsedData,
     });
-
   } catch (error) {
+    // Request timeout
     if (error.code === "ECONNABORTED") {
       return res.status(408).json({
         error: "Request timed out. The website took too long to respond.",
       });
     }
 
+    // Website returned an HTTP error
     if (error.response) {
       return res.status(error.response.status).json({
         error: `Website returned ${error.response.status}. It may block automated requests.`,
       });
     }
 
-    res.status(500).json({
+    // Other errors
+    return res.status(500).json({
       error: "Unable to analyze the website.",
     });
   }
